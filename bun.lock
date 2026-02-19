@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "mhacks-wip",
+      "name": "transition-site",
       "dependencies": {
         "framer-motion": "^12.34.1",
         "next": "16.1.6",
