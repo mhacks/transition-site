@@ -1,6 +1,9 @@
 name: CD
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build-push:
@@ -14,7 +17,7 @@ jobs:
         id: build
         uses: redhat-actions/buildah-build@v2
         with:
-          image: transition-site
+          image: ${{ github.event.repository.name }}
           tags: latest ${{ github.sha }}
           containerfiles: ./Dockerfile
 
@@ -26,6 +29,13 @@ jobs:
           registry: ghcr.io/${{ github.repository_owner }}
           username: ${{ github.actor }}
           password: ${{ github.token }}
+
+      - name: Delete old images
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: ${{ github.event.repository.name }}
+          package-type: container
+          min-versions-to-keep: 1
 
       - name: Update deploy tag
         run: |
