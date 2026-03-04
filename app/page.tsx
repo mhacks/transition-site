@@ -1,7 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { FiInstagram, FiLinkedin } from "react-icons/fi";
+import { SiTiktok } from "react-icons/si";
+import { RiTwitterXFill } from "react-icons/ri";
 
 export default function Home() {
   return (
@@ -46,34 +48,65 @@ export default function Home() {
           </p>
         </motion.div>
 
+        {/* Social Links */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="flex flex-col items-center gap-6"
         >
-          <Link
-            href="https://team.mhacks.org"
-            className="group relative inline-flex h-16 items-center justify-center overflow-hidden border-2 border-white bg-transparent px-10 text-white transition-all duration-300 hover:bg-white hover:text-black"
-          >
-            <div className="absolute inset-0 bg-white translate-y-full transition-transform duration-300 group-hover:translate-y-0"></div>
-            <span className="relative flex items-center gap-3 text-lg font-bold uppercase tracking-wider">
-              Join the Team
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </span>
-          </Link>
+          <p className="text-lg md:text-xl font-mono uppercase tracking-widest text-gray-300">
+            Follow us for more information
+          </p>
+          <div className="flex gap-6">
+            {/* Instagram */}
+            <motion.a
+              href="https://www.instagram.com/mhacks_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-12 h-12 flex items-center justify-center border-2 border-white hover:bg-white hover:text-black transition-all duration-300"
+            >
+              <FiInstagram className="w-6 h-6" />
+            </motion.a>
+
+            {/* LinkedIn */}
+            <motion.a
+              href="https://www.linkedin.com/company/mhacks/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-12 h-12 flex items-center justify-center border-2 border-white hover:bg-white hover:text-black transition-all duration-300"
+            >
+              <FiLinkedin className="w-6 h-6" />
+            </motion.a>
+
+            {/* TikTok */}
+            <motion.a
+              href="https://www.tiktok.com/@mhacks62/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-12 h-12 flex items-center justify-center border-2 border-white hover:bg-white hover:text-black transition-all duration-300"
+            >
+              <SiTiktok className="w-6 h-6" />
+            </motion.a>
+
+            {/* X */}
+            <motion.a
+              href="https://x.com/mhacks/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-12 h-12 flex items-center justify-center border-2 border-white hover:bg-white hover:text-black transition-all duration-300"
+            >
+              <RiTwitterXFill className="w-6 h-6" />
+            </motion.a>
+          </div>
         </motion.div>
       </div>
 
