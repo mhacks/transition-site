@@ -110,6 +110,19 @@ export default function Home() {
         </motion.div>
       </div>
 
+      <p className="z-20 absolute bottom-8 px-4 text-center text-xs md:text-sm font-mono text-gray-300">
+        <span className="inline-block border border-white/40 bg-black px-3 py-1">
+          Interested in sponsoring? Contact us at{" "}
+          <a
+            href="mailto:sponsorship@mhacks.org"
+            className="underline hover:text-white transition-colors duration-300"
+          >
+            sponsorship@mhacks.org
+          </a>
+          .
+        </span>
+      </p>
+
       {/* Caution Tape Background Effect - Bottom */}
       <div
         className="absolute bottom-0 left-0 w-full h-24 opacity-20 transform skew-y-2 pointer-events-none"
